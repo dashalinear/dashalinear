@@ -1,0 +1,32 @@
+public class MatrixFiller {
+    public static void main(String[] args) {
+        fillMatrix(4);
+        fillMatrix(6);
+        fillMatrix(8);
+    }
+
+    public static void fillMatrix(int size) {
+        int[][] matrix = new int[size][size];
+        int value = 1;
+
+        // Заполнение матрицы по строкам
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                matrix[i][j] = value++;
+            }
+        }
+
+        System.out.println("Матрица " + size + "x" + size + ":");
+        printMatrix(matrix);
+    }
+
+    public static void printMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int elem : row) {
+                System.out.printf("%4d", elem);
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+}
