@@ -1,0 +1,31 @@
+public class DiagonalMinFinder {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {5, 2, 3},
+            {4, 9, 6},
+            {7, 8, 1}
+        };
+
+        int n = matrix.length;
+        int minElement = Integer.MAX_VALUE;
+
+        // Loop through each row
+        for (int i = 0; i < n; i++) {
+            // Check main diagonal element
+            if (i != n - 1 - i) { // Exclude center element for odd-sized matrix
+                minElement = Math.min(minElement, matrix[i][i]);
+            }
+            // Check secondary diagonal element
+            if (i != n - 1 - i) { // Exclude center element for odd-sized matrix
+                minElement = Math.min(minElement, matrix[i][n - 1 - i]);
+            }
+        }
+
+        // If the matrix has only 1 element, we need to handle this case.
+        if (n == 1) {
+            minElement = matrix[0][0];
+        }
+
+        System.out.println("Минимальный элемент на диагоналях (без учета пересечения): " + minElement);
+    }
+}
