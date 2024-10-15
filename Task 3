@@ -10,12 +10,10 @@ public class DiagonalMinFinder {
         int minElement = Integer.MAX_VALUE;
 
         for (int i = 0; i < n; i++) {
-            // Проверяем элемент главной диагонали
             if (!(n % 2 != 0 && i == n / 2)) {
                 minElement = Math.min(minElement, matrix[i][i]);
             }
 
-            // Проверяем элемент побочной диагонали
             if (!(n % 2 != 0 && i == n / 2)) {
                 minElement = Math.min(minElement, matrix[i][n - 1 - i]);
             }
