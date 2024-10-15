@@ -1,0 +1,26 @@
+public class DiagonalMinFinder {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {5, 2, 3},
+            {4, 9, 6},
+            {7, 8, 1}
+        };
+
+        int n = matrix.length;
+        int minElement = Integer.MAX_VALUE;
+
+        for (int i = 0; i < n; i++) {
+            // Проверяем элемент главной диагонали
+            if (!(n % 2 != 0 && i == n / 2)) {
+                minElement = Math.min(minElement, matrix[i][i]);
+            }
+
+            // Проверяем элемент побочной диагонали
+            if (!(n % 2 != 0 && i == n / 2)) {
+                minElement = Math.min(minElement, matrix[i][n - 1 - i]);
+            }
+        }
+
+        System.out.println("Минимальный элемент на диагоналях (без учета пересечения): " + minElement);
+    }
+}
